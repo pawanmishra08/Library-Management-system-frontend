@@ -1,4 +1,4 @@
-import { BookAIcon } from "lucide-react";
+import { BookAIcon, BookOpen } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Sidebar() {
@@ -11,14 +11,14 @@ export default function Sidebar() {
             <ul>
                 <li>
                     <NavLink to = "/books" className={({ isActive }) => isActive ? "active-item" : ""}>
-                    <BookAIcon/>
+                    <BookOpen/>
                     Books
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to = "/publisher" className={({ isActive }) => isActive ? "active-item" : ""}>
+                    <NavLink to = "/publishers" className={({ isActive }) => isActive ? "active-item" : ""}>
                     <BookAIcon/>
-                    publisher
+                    publishers
                     </NavLink>
                 </li>
             </ul>

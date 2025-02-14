@@ -20,7 +20,7 @@ const publisher = () => {
   };
   const fetchPublisher = async () => {
     try {
-      const response = await fetch("http://localhost:3000/publisher", {
+      const response = await fetch("http://localhost:3000/publishers", {
       });
       console.log({ response });
       if (response.status === 200) {
@@ -77,7 +77,7 @@ const publisher = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData?.map((item : any) => (
+          {tableData?.map((item: any)=> (
             <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
