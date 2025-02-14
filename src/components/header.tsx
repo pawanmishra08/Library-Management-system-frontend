@@ -25,7 +25,7 @@ const Header = () => {
       />
 
      <UserCircle className="icon"/>
-       <span className="user-text"  style={{ color: "blue" }}>Pawan Mishra</span>
+       <span className="user-text"  style={{ color: "Red" }}>Pawan Mishra</span>
 
       </div>
     </div>

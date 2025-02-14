@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 import "../../components/table.css";
 import { useNavigate } from "react-router";
 
-const Books = () => {
+const publisher = () => {
   const [searchNumber, setSearchNumber] = useState("");
   const [data, setData] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>([]);
@@ -18,12 +18,9 @@ const Books = () => {
     setFilteredData(filteredData);
     return filteredData;
   };
-  const fetchBooks = async () => {
+  const fetchPublisher = async () => {
     try {
-      const response = await fetch("http://localhost:3000/books", {
-        // headers: {
-        //   Authorization: 'Bearer ${AUTH_TOKEN}',
-        // },
+      const response = await fetch("http://localhost:3000/publisher", {
       });
       console.log({ response });
       if (response.status === 200) {
@@ -36,7 +33,7 @@ const Books = () => {
     }
   };
   useEffect(() => {
-    fetchBooks();
+    fetchPublisher();
   }, []);
 
   // filter data by name on search text change
@@ -50,11 +47,12 @@ const Books = () => {
 
   // filterByName("marker");
   const tableData = searchNumber ? filteredData : data;
+  console.log(tableData);
 
 
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1>Books</h1>
+      <h1>Publishers</h1>
       <div className="search-container">
         <Search width={16} height={16} className="icon search" />
         <input
@@ -74,33 +72,27 @@ const Books = () => {
         <thead>
           <tr>
           <th>Id</th>
-          <th>title</th>
-          <th>author</th>
-          <th>price</th>
-          <th>available</th>
-          <th>publisher_id</th>
+            <th>name</th>
+            <th>Address</th>
           </tr>
         </thead>
         <tbody>
           {tableData?.map((item : any) => (
             <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.title}</td>
-              <td>{item.author}</td>
-              <td>{item.price}</td>
-              <td>{item.available}</td>
-              <td>{item.publisher_id}</td>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.address}</td>
             </tr>
           ))}
         </tbody>
       </table>
       {tableData.length === 0 && (
         <p style={{ width: "100%", textAlign: "center" }}>
-          This books is not available!!
+          This publisher is not available!!
         </p>
       )}
     </div>
   );
 };
 
-export default Books;
+export default publisher;
