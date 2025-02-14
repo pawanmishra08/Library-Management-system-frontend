@@ -7,7 +7,7 @@ export default function AddBooks() {
  const [title , setTitle] = useState("");
  const [author , setAuthor] = useState("");
  const [price , setPrice] = useState("");
- const [available , setAvailable] = useState<number | "">("");
+ const [available , setAvailable] = useState("");
  const [publisher_id , setPublisher_id] = useState("");
  const [error , setError] = useState("");
 
