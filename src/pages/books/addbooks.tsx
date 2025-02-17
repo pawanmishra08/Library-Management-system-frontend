@@ -42,7 +42,7 @@ export default function AddBooks() {
     };
     return (
         <div className="form-container">
-            <h1 style={{color: "green"}}>Add Books here!</h1>
+            <h1>Add Books here!</h1>
             <form style={{ gap: 16, color: "green" }} onSubmit={handlesubmit}>
                 <CustomInput type="number" label="Id" setValue={setId}/>
                 <CustomInput type="text" label="title" setValue={setTitle}/>
