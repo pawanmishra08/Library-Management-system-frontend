@@ -22,7 +22,7 @@ export default function AddBooks() {
 
  const AddBooks = async () => {
     try{
-        const response = await axios.post("http://localhost:3001/books", {
+        const response = await axios.post("http://localhost:3000/books", {
             data: {
                 Id: Id,
                 title: title,
@@ -34,7 +34,7 @@ export default function AddBooks() {
         });
         console.log({ response });
         if (response.status === 201){
-            console.log("Books Added Successfully");
+            console.log("Books added Successfully");
         }
        } catch (error) {
         console.error(error);
@@ -42,7 +42,7 @@ export default function AddBooks() {
     };
     return (
         <div className="form-container">
-            <h1 style={{color: "green"}}>Add Books</h1>
+            <h1 style={{color: "green"}}>Add Books here!</h1>
             <form style={{ gap: 16, color: "green" }} onSubmit={handlesubmit}>
                 <CustomInput type="number" label="Id" setValue={setId}/>
                 <CustomInput type="text" label="title" setValue={setTitle}/>
