@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJib29rX2lkIjoyOSwibWVtYmVyX2lkIjoxLCJuYW1lIjoicGF3YW5fbWlzaHJhIiwiZW1haWwiOiJwYXdhbjEyMjJAZ21haWwuY29tIiwibW9iaWxlIjoiOTg0Nzc2NjI2MDAiLCJwYXNzd29yZCI6IiQyYiQxMCQzajRJblVOZGV4Q3lLN0pDTDNuNEllbzY5alYvMHV3MWNtNnZMWDM4UUJ6QThkaEVDQ2V1UyIsImNyZWF0ZWRfYXQiOiIyMDI1LTAyLTIwVDA3OjQxOjE0LjIxNloiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMi0yMFQwNzo0MToxNC4yMTZaIiwiYm9va3MiOnsiaWQiOjI5LCJ0aXRsZSI6ImNvbXB1dGVyIGFyY2hoaXRlY3R1cmUiLCJhdXRob3IiOiJva2F5eXkiLCJwcmljZSI6MCwiYXZhaWxhYmxlIjpmYWxzZSwicHVibGlzaGVyX2lkIjo0LCJjcmVhdGVkX2F0IjoiMjAyNS0wMi0xOVQxODo1Mjo0MS40ODFaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDItMTlUMTg6NTI6NDEuNDgxWiJ9fSwiaWF0IjoxNzQwMDc1MzcyLCJleHAiOjE3NDA2ODAxNzJ9.tm_pspOQE98oVpxjIxnsMhcX16JUCkI2q4dsLUNGaJw";
 
 
-const publisher = () => {
+const members = () => {
   const [searchNumber, setSearchNumber] = useState("");
   const [data, setData] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>([]);
@@ -20,9 +20,9 @@ const publisher = () => {
     setFilteredData(filteredData);
     return filteredData;
   };
-  const fetchPublisher = async () => {
+  const fetchMember = async () => {
     try {
-      const response = await fetch("http://localhost:3000/publishers", {
+      const response = await fetch("http://localhost:3000/members", {
         headers: {
           Authorization: `Bearer ${AUTH_TOKEN}`,
         }
@@ -38,7 +38,7 @@ const publisher = () => {
     }
   };
   useEffect(() => {
-    fetchPublisher();
+    fetchMember();
   }, []);
 
   // filter data by name on search text change
@@ -57,7 +57,7 @@ const publisher = () => {
 
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1>Publishers</h1>
+      <h1>Members</h1>
       <div className="search-container">
         <Search width={16} height={16} className="icon search" />
         <input
@@ -68,7 +68,7 @@ const publisher = () => {
         />
         <button
           style={{ marginLeft: 16, padding: "4px 16px", width: "30%"}}
-          onClick={() => navigate("/publishers/add")}
+          onClick={() => navigate("")}
         >
           + Add New
         </button>
@@ -79,6 +79,7 @@ const publisher = () => {
           <th>Id</th>
             <th>name</th>
             <th>Address</th>
+            <th>member_expiry_date</th>
           </tr>
         </thead>
         <tbody>
@@ -87,17 +88,18 @@ const publisher = () => {
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.address}</td>
+                <td>{item.member_expiry_date}</td>
             </tr>
           ))}
         </tbody>
       </table>
       {tableData.length === 0 && (
         <p style={{ width: "100%", textAlign: "center" }}>
-          This publisher is not available!!
+          This member is not available!!
         </p>
       )}
     </div>
   );
 };
 
-export default publisher;
+export default members;
