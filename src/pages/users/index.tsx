@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJib29rX2lkIjoyOSwibWVtYmVyX2lkIjoxLCJuYW1lIjoicGF3YW5fbWlzaHJhIiwiZW1haWwiOiJwYXdhbjEyMjJAZ21haWwuY29tIiwibW9iaWxlIjoiOTg0Nzc2NjI2MDAiLCJwYXNzd29yZCI6IiQyYiQxMCQzajRJblVOZGV4Q3lLN0pDTDNuNEllbzY5alYvMHV3MWNtNnZMWDM4UUJ6QThkaEVDQ2V1UyIsImNyZWF0ZWRfYXQiOiIyMDI1LTAyLTIwVDA3OjQxOjE0LjIxNloiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMi0yMFQwNzo0MToxNC4yMTZaIiwiYm9va3MiOnsiaWQiOjI5LCJ0aXRsZSI6ImNvbXB1dGVyIGFyY2hoaXRlY3R1cmUiLCJhdXRob3IiOiJva2F5eXkiLCJwcmljZSI6MCwiYXZhaWxhYmxlIjpmYWxzZSwicHVibGlzaGVyX2lkIjo0LCJjcmVhdGVkX2F0IjoiMjAyNS0wMi0xOVQxODo1Mjo0MS40ODFaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDItMTlUMTg6NTI6NDEuNDgxWiJ9fSwiaWF0IjoxNzQwMDc1MzcyLCJleHAiOjE3NDA2ODAxNzJ9.tm_pspOQE98oVpxjIxnsMhcX16JUCkI2q4dsLUNGaJw";
 
 
-const publishers = () => {
+const User = () => {
   const [searchNumber, setSearchNumber] = useState("");
   const [data, setData] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>([]);
@@ -20,9 +20,9 @@ const publishers = () => {
     setFilteredData(filteredData);
     return filteredData;
   };
-  const fetchPublishers = async () => {
+  const fetchUser = async () => {
     try {
-      const response = await fetch("http://localhost:3000/publishers", {
+      const response = await fetch("http://localhost:3000/users", {
         headers: {
           Authorization: `Bearer ${AUTH_TOKEN}`,
         }
@@ -38,7 +38,7 @@ const publishers = () => {
     }
   };
   useEffect(() => {
-    fetchPublishers();
+    fetchUser();
   }, []);
 
   // filter data by name on search text change
@@ -57,7 +57,7 @@ const publishers = () => {
 
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1>Publishers</h1>
+      <h1>Users</h1>
       <div className="search-container">
         <Search width={16} height={16} className="icon search" />
         <input
@@ -68,7 +68,7 @@ const publishers = () => {
         />
         <button
           style={{ marginLeft: 16, padding: "4px 16px", width: "30%"}}
-          onClick={() => navigate("/publishers/add")}
+          onClick={() => navigate("")}
         >
           + Add New
         </button>
@@ -78,7 +78,11 @@ const publishers = () => {
           <tr>
           <th>Id</th>
             <th>name</th>
-            <th>Address</th>
+            <th>email</th>
+            <th>mobile</th>
+            <th>book_id</th>
+            <th>member_id</th>
+            <th>password</th>
           </tr>
         </thead>
         <tbody>
@@ -86,18 +90,22 @@ const publishers = () => {
             <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.address}</td>
+                <td>{item.email}</td>
+                <td>{item.mobile}</td>
+                <td>{item.book_id}</td>
+                <td>{item.member_id}</td>
+                <td>{item.password}</td>
             </tr>
           ))}
         </tbody>
       </table>
       {tableData.length === 0 && (
         <p style={{ width: "100%", textAlign: "center" }}>
-          This publisher is not available!!
+          This users is not available!!
         </p>
       )}
     </div>
   );
 };
 
-export default publishers;
+export default User;
