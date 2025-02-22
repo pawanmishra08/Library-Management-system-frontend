@@ -68,7 +68,7 @@ const members = () => {
         />
         <button
           style={{ marginLeft: 16, padding: "4px 16px", width: "30%"}}
-          onClick={() => navigate("")}
+          onClick={() => navigate("/members/add")}
         >
           + Add New
         </button>

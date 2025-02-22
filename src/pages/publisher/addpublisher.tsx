@@ -39,7 +39,7 @@ export default function AddPublisher() {
                 <CustomInput type="text" label="name" setValue={setName}/>
                 <CustomInput type="text" label="address" setValue={setAdress}/>
                 {error && <p style={{ color: "red"}}>{error}</p>}
-                <button type="submit">Add Publishers</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

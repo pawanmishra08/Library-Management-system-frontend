@@ -69,7 +69,7 @@ export default function AddBooks() {
                     </div>
                 </div>
                    {error && <p style={{ color: "red"}}>{error}</p>}
-                <button type="submit">Add Books</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

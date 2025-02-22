@@ -8,6 +8,7 @@ import AddPublishers from "./pages/publisher/addpublisher";
 import Members from "./pages/member";
 import { useAuth } from "./context/authContext";
 import Login from "./pages/auth/login";
+import AddMember from "./pages/member/addmember";
 
  // redirects to login page if the user is not authenticated
  const ProtectedRoutes = () => {
@@ -26,6 +27,7 @@ import Login from "./pages/auth/login";
         <Route  path= "/publishers" element ={< Publisher />} />
         <Route  path="/publishers/add" element ={<AddPublishers/>}/>
         <Route  path= "/members" element ={< Members/>} />
+        <Route path="/members/add" element ={<AddMember/>}/>
         </Route>
     </Routes>
   );

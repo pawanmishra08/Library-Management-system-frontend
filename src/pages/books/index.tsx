@@ -57,7 +57,7 @@ const Books = () => {
 
   return (
     <div style={{ width: "50%", margin: "auto" }}>
-      <h1 style={{ color: "green"}}>Books</h1>
+      <h1>Books</h1>
       <div className="search-container">
         <Search width={16} height={16} className="icon search" />
         <input
