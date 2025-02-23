@@ -1,4 +1,4 @@
-import { BookAIcon, BookOpen, UserCircle, UserPlus } from "lucide-react";
+import { BookAIcon, BookmarkMinus, BookOpen, UserCircle, UserPlus } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Sidebar() {
@@ -31,6 +31,12 @@ export default function Sidebar() {
                     <NavLink to = "/users" className={({ isActive }) => isActive ? "active-item" : ""}>
                     <UserPlus/>
                     Users
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to = "/borrowers" className={({ isActive }) => isActive ? "active-item" : ""}>
+                    <BookmarkMinus/>
+                    Borrowers
                     </NavLink>
                 </li>
             </ul>
