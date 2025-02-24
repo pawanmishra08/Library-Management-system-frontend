@@ -14,6 +14,13 @@ export default function HelpAndSupport() {
                     </p>
                 </Container>
             </div>
+            <div className="mt-4">
+                <Container className="text-gray-600">
+                    <h1 className="text-gray-600">
+                        Report Problem!
+                    </h1>
+                </Container>
+            </div>
         </div>
     );
 }

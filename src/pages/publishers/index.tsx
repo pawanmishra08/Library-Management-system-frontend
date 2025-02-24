@@ -93,7 +93,7 @@ const publishers = () => {
       </table>
       {tableData.length === 0 && (
         <p style={{ width: "100%", textAlign: "center" }}>
-          This publisher is not available!!
+          This publishers is not available!!
         </p>
       )}
     </div>

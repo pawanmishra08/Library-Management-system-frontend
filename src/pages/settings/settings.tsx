@@ -7,7 +7,9 @@ export default function Settings() {
                 <SettingsIcon /> Settings
             </h1>
             <div className="mt-4">
-                <p className="text-gray-600">Manage your account settings and preferences here.</p>
+                <p className="text-gray-600">Manage your account settings and preferences here!!!</p>
+                <h2>Accessibility</h2>
+                <p className="text-gray-600"> Here is the Accessibility!!!</p>
             </div>
         </div>
     );

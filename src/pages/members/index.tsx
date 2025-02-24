@@ -95,7 +95,7 @@ const members = () => {
       </table>
       {tableData.length === 0 && (
         <p style={{ width: "100%", textAlign: "center" }}>
-          This member is not available!!
+          This members is not available!!
         </p>
       )}
     </div>
