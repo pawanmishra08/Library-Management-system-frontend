@@ -48,7 +48,7 @@ export default function Sidebar() {
                 <li>
                     <NavLink to = "/settings" className={({ isActive }) => isActive ? "active-item" : ""}>
                     <SettingsIcon/>
-                    Setting
+                    Setting and Privacy
                     </NavLink>
                 </li>
                 <li>

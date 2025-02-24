@@ -13,9 +13,9 @@ import User from "./pages/users";
 import AddUsers from "./pages/users/addusers";
 import Borrower from "./pages/borrowers";
 import AddBorrower from "./pages/borrowers/addborrower";
-import Settings from "./pages/settings/settings";
-import Dashboard from "./pages/dashboard/dashboard";
-import HelpAndSupport from "./pages/help_and_Support/help_and_support";
+import Settings from "./pages/settings";
+import Dashboard from "./pages/dashboard";
+import HelpAndSupport from "./pages/help_and_Support";
 
  // redirects to login page if the user is not authenticated
  const ProtectedRoutes = () => {

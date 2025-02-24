@@ -1,4 +1,4 @@
-import { SettingsIcon } from "lucide-react";
+import { Icon, LockIcon, SettingsIcon } from "lucide-react";
 
 export default function Settings() {
     return (
@@ -10,6 +10,11 @@ export default function Settings() {
                 <p className="text-gray-600">Manage your account settings and preferences here!!!</p>
                 <h2>Accessibility</h2>
                 <p className="text-gray-600"> Here is the Accessibility!!!</p>
+            </div>
+            <div className="mt-4">
+                <h1 className="text-gray-600">
+                    <LockIcon /> Privacy Centre
+                </h1>
             </div>
         </div>
     );
