@@ -2,18 +2,20 @@ import "./App.css";
 import {Navigate, Route, Routes } from "react-router";
 import AppLayout from "./pages/applayout";
 import Books from "./pages/books";
-import Publishers from "./pages/publisher";
+import Publishers from "./pages/publishers";
 import AddBooks from "./pages/books/addbooks";
-import AddPublishers from "./pages/publisher/addpublisher";
-import Members from "./pages/member";
+import AddPublishers from "./pages/publishers/addpublisher";
+import Members from "./pages/members";
 import { useAuth } from "./context/authContext";
 import Login from "./pages/auth/login";
-import AddMember from "./pages/member/addmember";
+import AddMember from "./pages/members/addmember";
 import User from "./pages/users";
 import AddUsers from "./pages/users/addusers";
 import Borrower from "./pages/borrowers";
 import AddBorrower from "./pages/borrowers/addborrower";
-
+import Settings from "./pages/settings/settings";
+import Dashboard from "./pages/dashboard/dashboard";
+import HelpAndSupport from "./pages/help_and_Support/help_and_support";
 
  // redirects to login page if the user is not authenticated
  const ProtectedRoutes = () => {
@@ -37,6 +39,9 @@ import AddBorrower from "./pages/borrowers/addborrower";
         <Route  path="/users/add" element={<AddUsers/>}/>
         <Route  path="/borrowers" element={<Borrower/>}/>
         <Route  path="/borrowers/add" element= {<AddBorrower/>}/>
+        <Route  path="/settings" element = {<Settings/>}/>
+        <Route  path="/dashboard" element= {<Dashboard/>}/>
+        <Route  path="/help_and_suppport" element= {<HelpAndSupport/>}/>
         </Route>
     </Routes>
   );
