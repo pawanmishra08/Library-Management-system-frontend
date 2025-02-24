@@ -10,8 +10,10 @@ import { useAuth } from "./context/authContext";
 import Login from "./pages/auth/login";
 import AddMember from "./pages/member/addmember";
 import User from "./pages/users";
+import AddUsers from "./pages/users/addusers";
 import Borrower from "./pages/borrowers";
 import AddBorrower from "./pages/borrowers/addborrower";
+
 
  // redirects to login page if the user is not authenticated
  const ProtectedRoutes = () => {
@@ -32,6 +34,7 @@ import AddBorrower from "./pages/borrowers/addborrower";
         <Route  path= "/members" element ={< Members/>} />
         <Route  path="/members/add" element ={<AddMember/>}/>
         <Route  path="/users" element={<User/>}/>
+        <Route  path="/users/add" element={<AddUsers/>}/>
         <Route  path="/borrowers" element={<Borrower/>}/>
         <Route  path="/borrowers/add" element= {<AddBorrower/>}/>
         </Route>
