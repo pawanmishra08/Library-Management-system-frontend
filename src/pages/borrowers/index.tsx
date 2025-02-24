@@ -68,7 +68,7 @@ const Borrower = () => {
         />
         <button
           style={{ marginLeft: 16, padding: "4px 16px", width: "30%"}}
-          onClick={() => navigate("/books/add")}
+          onClick={() => navigate("/borrowers/add")}
         >
           + Add New
         </button>

@@ -39,7 +39,7 @@ const AddMember = async () => {
             <CustomInput type="number" label ="id" setValue={setId}/>
             <CustomInput type="text" label="name" setValue={setName}/>
             <CustomInput type="text" label ="address" setValue={setAddress}/>
-            <CustomInput type="number" label="member_expiry_date" setValue={setMember_expiry_date}/>
+            <CustomInput type="date" label="member_expiry_date" setValue={setMember_expiry_date}/>
             {error && <p style={{ color:"red" }}>{error}</p>}
             <button type="submit">Submit</button>
         </form>
