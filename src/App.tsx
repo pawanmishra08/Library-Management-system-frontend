@@ -13,9 +13,6 @@ import User from "./pages/users";
 import AddUsers from "./pages/users/addusers";
 import Borrower from "./pages/borrowers";
 import AddBorrower from "./pages/borrowers/addborrower";
-import Settings from "./pages/settings";
-import Dashboard from "./pages/dashboard";
-import HelpAndSupport from "./pages/help_and_Support";
 
  // redirects to login page if the user is not authenticated
  const ProtectedRoutes = () => {
@@ -39,9 +36,6 @@ import HelpAndSupport from "./pages/help_and_Support";
         <Route  path="/users/add" element={<AddUsers/>}/>
         <Route  path="/borrowers" element={<Borrower/>}/>
         <Route  path="/borrowers/add" element= {<AddBorrower/>}/>
-        <Route  path="/settings" element = {<Settings/>}/>
-        <Route  path="/dashboard" element= {<Dashboard/>}/>
-        <Route  path="/help_and_suppport" element= {<HelpAndSupport/>}/>
         </Route>
     </Routes>
   );
