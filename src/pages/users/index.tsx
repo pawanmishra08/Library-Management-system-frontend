@@ -82,7 +82,6 @@ const User = () => {
             <th>mobile</th>
             <th>book_id</th>
             <th>member_id</th>
-            <th>password</th>
           </tr>
         </thead>
         <tbody>
@@ -94,7 +93,6 @@ const User = () => {
                 <td>{item.mobile}</td>
                 <td>{item.book_id}</td>
                 <td>{item.member_id}</td>
-                <td>{item.password}</td>
             </tr>
           ))}
         </tbody>
