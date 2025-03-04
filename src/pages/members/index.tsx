@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import "../../components/table.css";
 import { useNavigate } from "react-router";
-const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJib29rX2lkIjoyOSwibWVtYmVyX2lkIjoxLCJuYW1lIjoicGF3YW5fbWlzaHJhIiwiZW1haWwiOiJwYXdhbjEyMjJAZ21haWwuY29tIiwibW9iaWxlIjoiOTg0Nzc2NjI2MDAiLCJwYXNzd29yZCI6IiQyYiQxMCQzajRJblVOZGV4Q3lLN0pDTDNuNEllbzY5alYvMHV3MWNtNnZMWDM4UUJ6QThkaEVDQ2V1UyIsImNyZWF0ZWRfYXQiOiIyMDI1LTAyLTIwVDA3OjQxOjE0LjIxNloiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wMi0yMFQwNzo0MToxNC4yMTZaIiwiYm9va3MiOnsiaWQiOjI5LCJ0aXRsZSI6ImNvbXB1dGVyIGFyY2hoaXRlY3R1cmUiLCJhdXRob3IiOiJva2F5eXkiLCJwcmljZSI6MCwiYXZhaWxhYmxlIjpmYWxzZSwicHVibGlzaGVyX2lkIjo0LCJjcmVhdGVkX2F0IjoiMjAyNS0wMi0xOVQxODo1Mjo0MS40ODFaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDItMTlUMTg6NTI6NDEuNDgxWiJ9fSwiaWF0IjoxNzQwMDc1MzcyLCJleHAiOjE3NDA2ODAxNzJ9.tm_pspOQE98oVpxjIxnsMhcX16JUCkI2q4dsLUNGaJw";
-
+import { api } from "../../api";
 
 const members = () => {
   const [searchNumber, setSearchNumber] = useState("");
@@ -22,16 +21,17 @@ const members = () => {
   };
   const fetchMember = async () => {
     try {
-      const response = await fetch("http://localhost:3000/members", {
-        headers: {
-          Authorization: `Bearer ${AUTH_TOKEN}`,
-        }
-      });
+      const response = await api({
+        method: 'get',
+        url: '/members',
+        });
+
       console.log({ response });
       if (response.status === 200) {
-        const data = await response.json();
-        console.log({ data });
-        setData(data);
+        console.log(response.data);
+        setData(response.data);
+        setFilteredData(response.data);
+
       }
     } catch (error) {
       console.error(error);
@@ -83,7 +83,7 @@ const members = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData?.map((item: any)=> (
+          {tableData?.map(( item : any)=> (
             <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
