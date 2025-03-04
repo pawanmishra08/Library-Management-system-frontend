@@ -1,6 +1,7 @@
+
 import { Bell, Search, UserCircle } from "lucide-react";
 import { useState } from "react";
-import "./header.css";
+import "../components/header.css";
 
 const Header = () => {
   const [isclicked , setIsClicked] = useState(false);
@@ -21,11 +22,11 @@ const Header = () => {
 
       <Bell
        className= {'icon bell  ${"isclicked" : ""}'}
-       onClick={  handleBellClicked }  style={{ marginRight: "10px" }}
+       onClick={  handleBellClicked }
       />
 
      <UserCircle className="icon"/>
-       <span className="user-text"  style={{ color: "Red" }}>Pawan Mishra</span>
+       <span className="user-text">Pawan Mishra</span>
 
       </div>
     </div>
