@@ -1,4 +1,4 @@
-import { BookAIcon, BookmarkMinus, BookOpen, UserCircle, UserPlus } from "lucide-react";
+import {BookAIcon, BookmarkMinus, BookOpen, LogInIcon,LogOutIcon,UserCircle, UserPlus } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Sidebar() {
@@ -39,8 +39,19 @@ export default function Sidebar() {
                     Borrowers
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to = "/login" className={({ isActive }) => isActive ? "active-item" : ""}>
+                    <LogInIcon/>
+                    Login
+                    </NavLink>
+                    </li>
+                    <li>
+                    <NavLink to = "/logout" className={({ isActive }) => isActive ? "active-item" : ""}>
+                    <LogOutIcon/>
+                    Logout
+                    </NavLink>
+                </li>
             </ul>
-
         </div>
     )
 }

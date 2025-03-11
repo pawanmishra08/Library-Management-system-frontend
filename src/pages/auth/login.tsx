@@ -33,7 +33,7 @@ const handlesubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
             <h1 className="header">Login</h1>
             <form className="login-form" onSubmit={ handlesubmit }>
                 <CustomInput label="Username" setValue={setUsername}/>
-                <CustomInput label="password" setValue={ setPassword}/>
+                <CustomInput label="Password" setValue={ setPassword}/>
                 {error && <p className="error">{error}</p>}
                 <CustomButton type="submit" label="Login"/>
             </form>
