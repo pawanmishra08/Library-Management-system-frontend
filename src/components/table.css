@@ -1,0 +1,19 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    background-color: green;
+  }
+
+  td, th {
+    border: 1px solid white;
+    text-align: left;
+    padding: 8px;
+    background-color: green;
+  }
+  tr:nth-child(even) {
+    background-color: white;
+  }
