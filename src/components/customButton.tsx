@@ -3,12 +3,14 @@ interface CustomButtonProps {
     onClick?: () => void;
     style?: object;
     type?: "button" | "submit" | "reset"
+    className?: string;
   }
 
-  const CustomButton = ({ label, onClick, style ,
+  const CustomButton = ({ label, onClick, style, className,
      type="button"}: CustomButtonProps) => {
     return (
-      <button type={type} style={style} onClick={onClick}>{label}</button>
+      <button type={type} style={style}
+       onClick={onClick} className= {className}>{label}</button>
     );
   }
 
