@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
-import React from "react";
+import Footer from "../components/footer";
 
 
 export default function AppLayout() {
@@ -12,6 +12,9 @@ export default function AppLayout() {
         <Header />
         <div style={{ padding: 16 }}>
           <Outlet />
+          <div style={{ display: "flex", flexDirection: "column", width: "100%", overflow: "auto" }}>
+        <Footer />
+        </div>
         </div>
       </div>
     </div>
