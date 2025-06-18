@@ -13,8 +13,8 @@ export default function AppLayout() {
         <div style={{ padding: 16 }}>
           <Outlet />
           <div style={{ display: "flex", flexDirection: "column", width: "100%", overflow: "auto" }}>
-        <GotoDashboardbutton />
-        </div>
+            <GotoDashboardbutton />
+           </div>
         </div>
       </div>
     </div>
