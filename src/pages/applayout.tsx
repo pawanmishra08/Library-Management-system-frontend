@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
-import Footer from "../components/footer";
+import GotoDashboardbutton from "../components/Gotodashboardbutton";
 
 
 export default function AppLayout() {
@@ -13,7 +13,7 @@ export default function AppLayout() {
         <div style={{ padding: 16 }}>
           <Outlet />
           <div style={{ display: "flex", flexDirection: "column", width: "100%", overflow: "auto" }}>
-        <Footer />
+        <GotoDashboardbutton />
         </div>
         </div>
       </div>

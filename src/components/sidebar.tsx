@@ -52,11 +52,17 @@ export default function Sidebar() {
                     <LogInIcon/>
                     Login
                     </NavLink>
-                    </li>
-                    <li>
+                </li>
+                <li>
                     <NavLink to = "/logout" className={({ isActive }) => isActive ? "active-item" : ""}>
                     <LogOutIcon/>
                     Logout
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to = "/" className={({ isActive }) => isActive ? "active-item" : ""}>
+                    <BookOpen/>
+                    Go to Dashboard
                     </NavLink>
                 </li>
             </ul>
